@@ -1,5 +1,5 @@
 from uuid import uuid4
-import flask from Flask
+from flask import Flask
 
 class Token:
     def __init__(self, tokenFile):
