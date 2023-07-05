@@ -42,6 +42,6 @@ def tokenisation(token):
 
 app.run()
 
-# Usage 👇
+# Usage 
 # token = Token('token.txt')
 # token.tokenisation('6829055c-8ffc-4a8d-a066-b43ad91b5342')
