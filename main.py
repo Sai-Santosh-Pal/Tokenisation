@@ -1,5 +1,6 @@
 from uuid import uuid4
 from flask import Flask
+from flask import render_template
 
 class Token:
     def __init__(self, tokenFile):
@@ -32,13 +33,14 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return "TOKENISATION"
-@app.route('/tokenisation/<int: token>')
+@app.route('/tokenisation/<string:token>')
 def tokenisation(token):
-    token = Token('token.txt')
-    if token.tokenisation(token):
-        return True
+    tokenClass = Token('token.txt')
+    if tokenClass.tokenisation(token):
+        return render_template('200.html'), 200
     else: 
-        return False
+        return render_template('404.html'), 404
+    
 
 app.run()
 
